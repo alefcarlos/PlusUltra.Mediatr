@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 namespace PlusUltra.Mediatr.Pipelines
 {
     public class FailFastRequestBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-            where TRequest : Notifiable, IRequest<TResponse>
+            where TRequest : RequestBase<TResponse>
             where TResponse : Notifiable, new()
     {
         public FailFastRequestBehavior(ILogger<FailFastRequestBehavior<TRequest, TResponse>> logger)
