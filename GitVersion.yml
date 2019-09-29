@@ -9,6 +9,7 @@ branches:
     track-merge-target: false
     tracks-release-branches: false
     is-mainline: true
+    is-source-branch-for: ['breaking', 'feature', 'fix']
   breaking:
     regex: breaking?[/-]
     tag: ''
