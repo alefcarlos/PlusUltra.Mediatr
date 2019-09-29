@@ -1,6 +1,32 @@
 assembly-versioning-scheme: MajorMinorPatch
 mode: Mainline
-branches: {}
-ignore:
-  sha: []
-merge-message-formats: {}
+branches:
+  master:
+    regex: master
+    tag: ''
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    tracks-release-branches: false
+    is-mainline: true
+  breaking:
+    regex: breaking?[/-]
+    tag: ''
+    increment: Major
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    tracks-release-branches: false
+  feature:
+    regex: feature?[/-]
+    tag: ''
+    increment: Minor
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    tracks-release-branches: false
+  fix:
+    regex: fix?[/-]
+    tag: ''
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    tracks-release-branches: false
